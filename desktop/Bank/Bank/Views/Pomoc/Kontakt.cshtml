@@ -1,0 +1,52 @@
+﻿@model Bank.Models.KontaktModel
+@{
+    ViewBag.Title = "Kontakt";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Wyślij zgłoszenie</h2>
+</hgroup>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+}
+
+<section class="contact">
+    <header>
+        <h3>Telefon</h3>
+    </header>
+    <p>
+        <span class="label">Kom:</span>
+        <span>123-456-789</span>
+    </p>
+</section>
+
+<fieldset>
+    <legend>Kontakt Form</legend>
+    <ol>
+        <li>
+            @Html.LabelFor(m => m.KontaktFirstName)
+            @Html.TextBoxFor(m => m.KontaktFirstName)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.KontaktSurname)
+            @Html.TextBoxFor(m => m.KontaktSurname)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.KontaktId)
+            @Html.TextBoxFor(m => m.KontaktId)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.KontaktText)
+            @Html.TextBoxFor(m => m.KontaktText)
+        </li>
+
+    </ol>
+    <input type="submit" value="Wyślij email" />
+</fieldset>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
