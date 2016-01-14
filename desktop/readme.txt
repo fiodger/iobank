@@ -1,3 +1,3 @@
-Wygl¹d desktopowy strony banku.
+Wyglad desktopowy strony banku.
 Przemyslaw Swiderski
 Radoslaw Pawlaczyk
