@@ -43,7 +43,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -181,14 +184,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\KontaktController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HistoriaController.cs" />
-    <Compile Include="Controllers\StartController.cs" />
+    <Compile Include="Controllers\ObsługaKlientaController.cs" />
+    <Compile Include="Controllers\ProwadzenieRachunkuController.cs" />
     <Compile Include="Controllers\LokatyController.cs" />
-    <Compile Include="Controllers\PomocController.cs" />
-    <Compile Include="Controllers\PrzelewyController.cs" />
+    <Compile Include="Controllers\TransakcjeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -291,32 +291,40 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Pomoc\Kontakt.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Lokaty\Index.cshtml" />
-    <Content Include="Views\Pomoc\Pomoc.cshtml" />
-    <Content Include="Views\Przelewy\Index.cshtml" />
-    <Content Include="Views\Start\Index.cshtml" />
-    <Content Include="Views\Historia\Index.cshtml" />
+    <Content Include="Views\ObsługaKlienta\Wnioski.cshtml" />
+    <Content Include="Views\ObsługaKlienta\Index.cshtml" />
+    <Content Include="Views\ObsługaKlienta\Zarzadzaj.cshtml" />
+    <Content Include="Views\ObsługaKlienta\Zgłoszenia.cshtml" />
+    <Content Include="Views\ObsługaKlienta\Klienci.cshtml" />
+    <Content Include="Views\ObsługaKlienta\Kontakt.cshtml" />
+    <Content Include="Views\ObsługaKlienta\FAQ.cshtml" />
+    <Content Include="Views\Transakcje\Index.cshtml" />
+    <Content Include="Views\Transakcje\Przelewy.cshtml" />
+    <Content Include="Views\ProwadzenieRachunku\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\ProwadzenieRachunku\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\ProwadzenieRachunku\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\ProwadzenieRachunku\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\ProwadzenieRachunku\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\ProwadzenieRachunku\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\ProwadzenieRachunku\Login.cshtml" />
+    <Content Include="Views\ProwadzenieRachunku\Manage.cshtml" />
+    <Content Include="Views\ProwadzenieRachunku\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

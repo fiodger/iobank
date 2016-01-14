@@ -22,18 +22,33 @@
                     <ul id="menu">
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <li>@Html.ActionLink("Widok konta", "Index", "Start")</li>
-                            <li>@Html.ActionLink("Historia", "Index", "Historia")</li>
-                            <li>@Html.ActionLink("Przelewy", "Index", "Przelewy")</li>
-                            <li>@Html.ActionLink("Lokaty", "Index", "Lokaty")</li>
-                            <li>@Html.ActionLink("Pomoc", "Pomoc", "Pomoc")</li>
-                            <li>@Html.ActionLink("Kontakt", "Kontakt", "Pomoc")</li>
+                            if (User.Identity.Name == "a")
+                            {
+                                <li>@Html.ActionLink("Klienci","Klienci", "ObsługaKlienta")</li>
+                                <li>@Html.ActionLink("Wnioski", "Wnioski", "ObsługaKlienta")</li>
+                                <li>@Html.ActionLink("Zgłoszenia", "Zgłoszenia", "ObsługaKlienta")</li>
+                            }
+                            else if (User.Identity.Name == "aaa")
+                            {
+                                <li>@Html.ActionLink("Klienci", "Klienci", "ObsługaKlienta")</li>
+                                <li>@Html.ActionLink("Wnioski", "Wnioski", "ObsługaKlienta")</li>
+                                <li>@Html.ActionLink("Zgłoszenia", "Zgłoszenia", "ObsługaKlienta")</li>
+                                <li>@Html.ActionLink("Zarządzaj", "Zarzadzaj", "ObsługaKlienta")</li>
+                            }
+                            else
+                            {
+                                                          
+                                <li>@Html.ActionLink("Widok konta", "Index", "Transakcje")</li>
+                                <li>@Html.ActionLink("Przelewy", "Przelewy", "Transakcje")</li>
+                                <li>@Html.ActionLink("Lokaty", "Index", "Lokaty")</li>
+                                <li>@Html.ActionLink("Kontakt", "Kontakt", "ObsługaKlienta")</li>
+                            }
                         }
+                        
                         else
                         {
-                            <li>@Html.ActionLink("Start", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Pomoc", "Pomoc", "Pomoc")</li>
-                            <li>@Html.ActionLink("Kontakt", "Kontakt", "Pomoc")</li>
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("FAQ", "FAQ", "ObsługaKlienta")</li>
                         }
                     </ul>
                 </nav>

@@ -1,0 +1,71 @@
+﻿@model Bank.Models.KontaktModel
+@{
+    ViewBag.Title = "Kontakt";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+}
+
+<section class="contact">
+    <article>
+        <p>
+            FAQ:
+        </p>
+
+        <p>
+            1. Pytanie
+        </p>
+
+        <p>
+            2. Pytanie
+        </p>
+    </article>
+
+    <header>
+        <h3>Telefon</h3>
+    </header>
+    <p>
+        <span class="label">Kom:</span>
+        <span>123-456-789</span>
+    </p>
+
+
+    <fieldset>
+        <legend>Zgłoszenie</legend>
+        <h2>Wyślij zgłoszenie</h2>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.KontaktFirstName)
+                @Html.TextBoxFor(m => m.KontaktFirstName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.KontaktSurname)
+                @Html.TextBoxFor(m => m.KontaktSurname)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.KontaktId)
+                @Html.TextBoxFor(m => m.KontaktId)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.KontaktText)
+                @Html.TextBoxFor(m => m.KontaktText)
+            </li>
+
+        </ol>
+        <button type="button">Wyślij</button>
+    </fieldset>
+    <h3>Złóż wniosek o zamknięcie konta</h3>
+    <button type="button">Złóż wniosek</button>
+</section>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

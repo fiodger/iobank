@@ -30,7 +30,7 @@ namespace Bank.Models
     public class RegisterExternalLoginModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Login")]
         public string UserName { get; set; }
 
         public string ExternalLoginData { get; set; }
@@ -40,18 +40,18 @@ namespace Bank.Models
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "Obecne hasło")]
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Hasło musi skłądać sie z przynajmniej 6 znaków w tym dwie duże litery.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "Nowe hasło")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "Potwierdź nowe hasło")]
+        [Compare("NewPassword", ErrorMessage = "Hasła nie są identyczne")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -113,6 +113,43 @@ namespace Bank.Models
         [Required]
         [Display(Name = "Text")]
         public string KontaktText { get; set; }
+    }
+
+    public class PrzlewModel
+    {
+        [Required]
+        [Display(Name = "Imię")]
+        public string PrzelewFirstName { get; set; }
+        [Required]
+        [Display(Name = "Nazwisko")]
+        public string PrzelewSurname { get; set; }
+        [Required]
+        [StringLength(26, ErrorMessage = "Nr rachunku musi skłądać się z 26 cyfr", MinimumLength = 26)]
+        [Display(Name = "Nr rachunku")]
+        public int PrzelewId { get; set; }
+        [Required]
+        [Display(Name = "Tytuł")]
+        public string PrzelewText { get; set; }
+    }
+
+    public class PrzlewCyklicznyModel
+    {
+        [Required]
+        [Display(Name = "Imię")]
+        public string CPrzelewFirstName { get; set; }
+        [Required]
+        [Display(Name = "Nazwisko")]
+        public string CPrzelewSurname { get; set; }
+        [Required]
+        [StringLength(26, ErrorMessage = "Nr rachunku musi skłądać się z 26 cyfr", MinimumLength = 26)]
+        [Display(Name = "Nr rachunku")]
+        public int CPrzelewId { get; set; }
+        [Required]
+        [Display(Name = "Tytuł")]
+        public string CPrzelewText { get; set; }
+        [Required]
+        [Display(Name = "Cykliczny co ile dni")]
+        public int CPrzelewTime { get; set; }
     }
 
     public class ExternalLogin

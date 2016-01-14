@@ -13,7 +13,6 @@ namespace Bank.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Message = "Tu Bedzie Strona Zarzadzania lokatami.";
             return View();
         }
 

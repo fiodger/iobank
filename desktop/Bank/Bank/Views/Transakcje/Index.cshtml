@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Widok Konta";
+}
+
+<h3>Saldo Konta:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Rachunek: 2390,22 </h5>
+    </li>
+
+</ol>
+<h3> Historia</h3>
+<table>
+    <head>
+        <title>Historia rachunku</title>
+        <style type="text/css">
+            table {
+                border-collapse: collapse;
+                width: 1000px;
+            }
+
+            td {
+                border: 2px solid #000000;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <tbody>
+        <tr class="header">
+            <td>Imie</td>
+            <td>Nazwisko</td>
+            <td>Typ</td>
+            <td>kwota</td>
+            <td>tytuł</td>
+        </tr>
+        @for (int i = 0; i < 4; i++)
+        {
+            <tr>
+                <td>aaaa</td>
+                <td>aaaa</td>
+                <td>aaaa</td>
+                <td>aaaa</td>
+                <td>aaaa</td>
+            </tr>
+        }
+    </tbody>
+</table>
